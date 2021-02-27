@@ -1,4 +1,4 @@
-FROM archlinux:base
+FROM archlinux:base-20210131.0.14634
 
 MAINTAINER Lemures Lemniscati <lemures.lemniscati@gmail.com>
 
