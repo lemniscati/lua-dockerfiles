@@ -1,0 +1,23 @@
+FROM archlinux:base
+
+MAINTAINER Lemures Lemniscati <lemures.lemniscati@gmail.com>
+
+RUN date --iso-8601=ns\
+ && pacman --sync --refresh --sysupgrade --noconfirm\
+	core/tzdata\
+	core/bash\
+	core/diffutils\
+	core/findutils\
+	core/make\
+	core/gzip\
+	core/bzip2\
+	core/xz\
+	core/tar\
+	core/gcc\
+	extra/git\
+	extra/lua\
+	extra/lua51\
+	extra/lua52\
+	extra/lua53\
+	community/luarocks\
+ && date --iso-8601=ns
