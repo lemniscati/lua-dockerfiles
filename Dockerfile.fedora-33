@@ -1,0 +1,17 @@
+FROM fedora:33
+
+MAINTAINER Lemures Lemniscati <lemures.lemniscati@gmail.com>
+
+RUN date --iso-8601=ns\
+ && yum -y update\
+ && yum -y install\
+	tzdata\
+	bash\
+	diffutils\
+	findutils\
+	git\
+	make\
+	xz\
+	gcc\
+	lua lua-devel luarocks\
+ && date --iso-8601=ns
