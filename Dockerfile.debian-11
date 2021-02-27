@@ -1,0 +1,24 @@
+FROM debian:bullseye
+
+MAINTAINER Lemures Lemniscati <lemures.lemniscati@gmail.com>
+
+RUN date --iso-8601=ns\
+ && apt-get update\
+ && apt-get -y upgrade\
+ && DEBIAN_FRONTEND=noninteractive\
+    apt-get -y install\
+	tzdata\
+	bash\
+	diffutils\
+	findutils\
+	git\
+	make\
+	xz-utils\
+	lua5.3 liblua5.3-dev\
+	lua5.2 liblua5.2-dev\
+	lua5.1 liblua5.1-dev\
+	luarocks\
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*\
+ && dpkg-reconfigure --frontend noninteractive tzdata\
+ && date --iso-8601=ns
